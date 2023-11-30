@@ -88,6 +88,7 @@ inner-column {
 header inner-column, footer inner-column {
     padding-top: 10px;
     padding-bottom: 10px;
+    height: 60px;
 }
 
 /*TYPOGRAPHY*/
@@ -111,6 +112,28 @@ header inner-column, footer inner-column {
     line-height: 1.3;
 }
 
+.quote {
+    font-size: 36px;
+    font-style: italic;
+    color: var(--dark);
+}
+
+.signature {
+    font-size: 36px;
+    font-style: light italic;
+    color: var(--dark);
+}
+
+.action-main {
+    font-size: 2rem;
+    color: var(--white);
+
+}
+
+.action-second {
+    color: var(--light);
+    font-size: 1rem;
+}
 /*COMPONENTS*/
 .button {
     font-family: sans-serif;
@@ -122,9 +145,6 @@ header inner-column, footer inner-column {
     border-radius: 15px;
 }
 
-product-card {
-    display: block;
-}
 
 /*MODULES*/
 graphic-diptych {
@@ -142,7 +162,8 @@ graphic-diptych picture {
 }
 
 graphic-diptych text-content { 
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 graphic-diptych text-content p {
@@ -150,7 +171,8 @@ graphic-diptych text-content p {
 }
 
 graphic-diptych text-content .button {
-    margin-top: 10px;  
+    margin-top: auto;  
+    max-width:fit-content
 }
 
 @media(min-width: 700px) {
@@ -161,6 +183,7 @@ graphic-diptych text-content .button {
         flex-basis: 50%;
         /* border: 1px solid blue; */
     }
+    
 }
 
 products-grid {
@@ -183,11 +206,80 @@ product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
+quote-card {
+    display: flex;
+    flex-direction: column;
+}
+
+quote-card .signature {
+    margin-left: auto;
+}
+
+action-card {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 0.5em;
+    align-items: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    padding: 3em;
+    padding-left: 5em;
+    padding-right: 5em;
+    border-radius: 15px;
+    background-color: var(--color);
+    
+}
+
+action-card text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+}
+
+@media(min-width:840px) {
+    action-card {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    action-card text-content {
+        align-items: flex-start;
+    }
+}
+
+
+action-card .button {
+    border: 1px solid var(--white);
+}
+
+footer inner-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*SECTIONS */
+
+header {
+    background-color: var(--dark);
+    color: var(--white);
+}
 
 .welcome {
     background-color: var(--dark);
     color: var(--white);
 }
+
+.testimonial {
+    background-color: var(--light);
+    color: var(--dark)
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
