@@ -1,0 +1,193 @@
+/*setup*/
+@import "meyer-reset.css";
+
+* {
+    box-sizing: border-box;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a, li a {
+    display: inline-block;
+    color: blue;
+    text-decoration: underline;
+}
+
+/*SETTINGS*/
+
+html {
+    --black: #333;
+    --white:#F9FAF8;
+    --color: #3882F6;
+    --dark: #1f2937;
+    --light: #E5E7EB;
+}
+
+/*DEV STYLES*/
+
+/* body * {
+    border: 1px solid blue;
+    padding: 2px;
+} */
+
+/* inner-column {
+    border: 8px solid orange;
+}
+
+graphic-diptych {
+    border: 8px solid dodgerblue;
+}
+
+header, footer, main {
+    border: 8px solid red;
+}
+
+section {
+    border: 8px solid lime;
+} */
+
+/*structure*/
+
+body {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+inner-column {
+    display: block;
+    padding: 10px;
+    /**/
+    width: 98%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    /**/
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+header inner-column, footer inner-column {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*TYPOGRAPHY*/
+
+.loud-voice {
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: .9;
+}
+@media(min-width: 700px){
+    .loud-voice {
+        font-size: 40px;
+    }
+}
+
+
+.calm-voice {
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+/*COMPONENTS*/
+.button {
+    font-family: sans-serif;
+    display: inline-block;
+    background-color: var(--color);
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.6em 1em;
+    border-radius: 15px;
+}
+
+product-card {
+    display: block;
+}
+
+/*MODULES*/
+graphic-diptych {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    /* padding-top: 10vh;
+    padding-bottom: 10vh; */
+}
+
+graphic-diptych picture {
+    
+}
+
+graphic-diptych text-content { 
+    display: block;
+}
+
+graphic-diptych text-content p {
+    margin-top: 10px;
+}
+
+graphic-diptych text-content .button {
+    margin-top: 10px;  
+}
+
+@media(min-width: 700px) {
+    graphic-diptych {
+        flex-direction: row-reverse;
+    }
+    graphic-diptych :is(text-content, picture) {
+        flex-basis: 50%;
+        /* border: 1px solid blue; */
+    }
+}
+
+products-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+products-grid .product-title {
+    align-self: center;
+    margin-bottom: 3em;
+}
+
+products-grid .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 2em;
+}
+
+product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*SECTIONS */
+
+.welcome {
+    background-color: var(--dark);
+    color: var(--white);
+}
